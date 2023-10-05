@@ -41,6 +41,17 @@
       [37.801, -122.44],
       [37.810, -122.50]
     ]).addTo(map)
+    // 為 marker 加上彈出訊息
+    marker.bindPopup('<b>Hello!</b><br>This is Golden Gate Bridge').openPopup()
+    // 為 circle 加上彈出訊息
+    circle.bindPopup('<b>This is a circle! </b>')
+    // 為 polygon 加上彈出訊息
+    polygon.bindPopup('<b> This is a polygon! </b>')
+    // 為特定座標加上資訊欄位
+    const popup = L.popup()
+      .setLatLng([37.82, -122.53])
+      .setContent("I am a standalone popup.")
+      .openOn(map)
   </script>
 </body>
 </html>
