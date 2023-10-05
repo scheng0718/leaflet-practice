@@ -52,6 +52,14 @@
       .setLatLng([37.82, -122.53])
       .setContent("I am a standalone popup.")
       .openOn(map)
+    // 設定點擊時顯示經緯度
+    function onMapClick(event) {
+      popup
+        .setLatLng(event.latlng)
+        .setContent("You clicked the map at " + event.latlng.toString())
+        .openOn(map)
+    }
+    map.on('click', onMapClick)
   </script>
 </body>
 </html>
